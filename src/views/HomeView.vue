@@ -6,7 +6,6 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 <template>
   <main>
     <div class="">
-      <input type="text" class="border-gray-400 border rounded-md w-full" />
       <div class="flex justify-center gap-2">
         <RouterLink to="/" v-for="letter in letters">
           {{ letter }}
