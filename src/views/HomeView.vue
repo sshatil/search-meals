@@ -6,7 +6,7 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 <template>
   <main>
-    <div class="">
+    <div class="m-2">
       <div class="">
         <MealCategories />
       </div>

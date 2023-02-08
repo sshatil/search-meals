@@ -3,6 +3,7 @@ import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import axios from "axios";
 import YoutubeBtn from "../components/utils/YoutubeBtn.vue";
+import Loading from "@/components/utils/Loading.vue";
 
 const route = useRoute();
 const details = ref({});
@@ -27,9 +28,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <section v-if="!isLoading">
-    <div class="max-w-[800px] mx-auto p-8">
-      <h1 class="text-4xl font-bold mb-5 text-orange-500">
+  <section>
+    <div class="" v-if="isLoading">
+      <Loading />
+    </div>
+    <div class="max-w-[800px] mx-auto p-8" v-else>
+      <h1 class="text-4xl font-bold mb-5 text-red-500">
         {{ details.strMeal }}
       </h1>
       <img
@@ -68,7 +72,6 @@ onMounted(() => {
           <ul v-for="(item, i) in new Array(20)">
             <ul>
               <li v-if="details[`strMeasure${i + 1}`]">
-                {{ i + 1 }}:
                 {{ details[`strMeasure${i + 1}`] }}
               </li>
             </ul>
