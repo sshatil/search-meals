@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink } from "vue-router";
 defineProps({
   list: {
     type: Object,
@@ -20,11 +21,18 @@ defineProps({
           {{ list.strCategoryDescription.slice(0, 110) }}...
         </p>
         <div class="mt-2 text-center w-full">
-          <button
-            class="bg-red-500 px-3 py-1 rounded-md text-white hover:bg-red-600 transition-colors w-full font-semibold"
+          <RouterLink
+            :to="{
+              name: 'mealByCategory',
+              params: { categoryName: list.strCategory },
+            }"
           >
-            {{ list.strCategory }} Item
-          </button>
+            <button
+              class="bg-red-500 px-3 py-1 rounded-md text-white hover:bg-red-600 transition-colors w-full font-semibold"
+            >
+              {{ list.strCategory }} Item
+            </button>
+          </RouterLink>
         </div>
       </div>
     </div>
