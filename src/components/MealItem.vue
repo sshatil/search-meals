@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink } from "vue-router";
+import YoutubeBtn from "./utils/YoutubeBtn.vue";
 defineProps({
   meal: {
     type: Object,
@@ -26,12 +27,7 @@ defineProps({
         >
       </p>
       <div class="mt-2">
-        <a
-          :href="meal.strYoutube"
-          class="px-2 py-1 text-sm font-medium bg-red-500 rounded-md text-white hover:bg-red-600 transition-colors"
-          target="_blank"
-          >Youtube</a
-        >
+        <YoutubeBtn :href="meal.strYoutube" />
       </div>
     </div>
   </section>

@@ -2,6 +2,7 @@
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import axios from "axios";
+import YoutubeBtn from "../components/utils/YoutubeBtn.vue";
 
 const route = useRoute();
 const details = ref({});
@@ -73,8 +74,8 @@ onMounted(() => {
             </ul>
           </ul>
         </div>
-        <div class="mt-4">
-          <YouTubeButton :href="details.strYoutube" />
+        <div class="mt-4 flex items-center">
+          <YoutubeBtn :href="details.strYoutube">Go to YouTube</YoutubeBtn>
           <a
             :href="details.strSource"
             target="_blank"

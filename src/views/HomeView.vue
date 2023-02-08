@@ -1,15 +1,14 @@
 <script setup>
 import { RouterLink } from "vue-router";
+import MealCategories from "../components/MealCategories.vue";
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 </script>
 
 <template>
   <main>
     <div class="">
-      <div class="flex justify-center gap-2">
-        <RouterLink to="/" v-for="letter in letters">
-          {{ letter }}
-        </RouterLink>
+      <div class="">
+        <MealCategories />
       </div>
     </div>
   </main>
